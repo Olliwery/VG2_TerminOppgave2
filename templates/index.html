@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi clicker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="navSider">
+        <div class="blockHeader">
+            {% block header %}
+            <h1>Sushi clicker</h1>
+            {% endblock %}
+        </div>
+        <div class="sider">
+            <a href="/">Hjemmeside</a>
+            <p>●</p>
+            <a href="/brukerSide">Registrer / Logg Inn</a>
+        </div>
+        <div class="headerRight"></div>
+    </div>
+    <hr>
+
+    {% block body %}
+    <div class="mainInnhold">
+        <img id="sushiSvg" src="/static/images/sushiClicker.svg" alt="svg sushi">
+        <p id="printClicks">her skal det printes</p>
+    </div>
+
+    {% endblock %}
+
+</body>
+<script src="/static/script.js"></script>
+
+</html>
