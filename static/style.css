@@ -43,7 +43,6 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-items: center;
     gap: 4vw;
     margin-top: 5vh;
 }
@@ -75,28 +74,113 @@ hr {
     flex: 1;
 }
 
-#sushiSvg {
-    width: 20vw;
-    margin-bottom: 5vh;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+/* The container for both sushi and cutting board */
+#woodenCB {
+    position: relative; /* Ensure sushi is positioned relative to the cutting board */
+    width: 50vw; /* Keep the original size */
+    height: 30vw; /* Maintain the original height */
+    margin-top: 10vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
-#sushiSvg:hover  {
-    -webkit-transform: scale(1.1);
+#sushiSvg {
+    width: 15vw;
+    position: absolute;
+    left: 42%;
+    top: 55%;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+#sushiSvg:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
+
+
+/* Implementing Grid Layout */
 .mainInnhold {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 3 columns: left (scoreboard), center (sushi clicker), right (upgrades) */
+    grid-gap: 2vw;
+    margin-top: 10vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Add styling for each section */
+.scoreboard {
+    background-color: #505050; /* Grey background for scoreboard */
+    padding: 2vw;
+    border-radius: 0.3vw;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.registrerInputs {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin-top: 10vh;
+    text-align: center;
+    align-items: center;
+}
+
+.registrerInputs input {
+    padding: 1vw;
+    width: 20.5vw;
+    border: #2C6708 3px solid;
+    border-radius: 2px;
+}
+
+.registrerInputs h4 {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: left;
+}
+
+.oppgrader {
+    background-color: #505050; /* Grey background for the upgrade section */
+    padding: 2vw;
+    border-radius: 0.3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.oppgrader button {
+    color: white;
+    font-weight: bold;
+    background-color: #505050; /* Grey background for buttons */
+    padding: 0.75vw;
+    border-radius: 0.3vw;
+    border: white 1px solid;
+    width: 100%;
+}
+
+.oppgrader button:hover {
+    cursor: pointer;
+}
+
+.oppgrader div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
 }

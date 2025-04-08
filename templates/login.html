@@ -5,5 +5,18 @@
 {% endblock %}
 
 {% block body %}
+<form method="POST">
+    <div class="registrerInputs">
+        <div>
+            <h4>Email:</h4>
+            <input type="text" name="email" placeholder="Skriv inn emailen ditt" style="font-style:italic">
+        </div><br>
+        <div>
+            <h4>Passord:</h4>
+            <input type="text" name="passord" placeholder="Skriv inn passordet ditt" style="font-style:italic">
+        </div>
+        <button type="submit">Logg inn</button>
+    </div>
+</form>
 
 {% endblock %}

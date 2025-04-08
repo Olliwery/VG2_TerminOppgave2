@@ -27,10 +27,34 @@
 
     {% block body %}
     <div class="mainInnhold">
-        <img id="sushiSvg" src="/static/images/sushiClicker.svg" alt="svg sushi">
-        <p id="printClicks">her skal det printes</p>
-    </div>
+        <!-- Scoreboard Section -->
+        <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <p id="printClicks">Her skal det printes</p>
+        </div>
 
+        <!-- Sushi Clicker Section -->
+        <div class="sushi-clicker">
+            <img id="woodenCB" src="/static/images/woodenCB.png" alt="wooden cutting board png">
+            <img id="sushiSvg" src="/static/images/sushiClicker.svg" alt="svg sushi">
+        </div>
+
+        <!-- Upgrades Section -->
+        <div class="oppgrader">
+            <div>
+                <button id="moreClicks">Multiply Clicks</button>
+                <p id="printMoreClicks"></p>
+            </div>
+            <div>
+                <button id="moreChefs">More Chefs</button>
+                <p id="printMoreChefs"></p>
+            </div>
+            <div>
+                <button id="chefsClicks">Chefs Level</button>
+                <p id="printChefClicks"></p>
+            </div>
+        </div>
+    </div>
     {% endblock %}
 
 </body>
