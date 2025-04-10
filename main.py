@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect, url_for
+from flask import Flask, render_template, session, request, redirect
 import mysql.connector
 import os
 
@@ -59,24 +59,24 @@ def registrer_post():
 def login():
     return render_template("login.html")
 
+
 @app.route("/login_post", methods=['POST'])
 def login_post():
-    name = request.form['name']
     email = request.form['email']
     password = request.form['passord']
     
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    query = "SELECT * FROM Brukere WHERE name = %s AND email = %s AND passord = %s"
-    cursor.execute(query, (name, email, password))
+    query = "SELECT * FROM Brukere WHERE email = %s AND passord = %s"
+    cursor.execute(query, (email, password))
     user = cursor.fetchone()
     
     cursor.close()
     conn.close()
     
     if user:
-        session['name'] = name
+        session['name'] = user
         return redirect("/")
     else:
         return render_template('/login', error="Feil email eller passord.")
@@ -85,7 +85,7 @@ def login_post():
 def logout():   
     session.clear()  # Fjerner all sesjonsdata
     return redirect("/")
-    
+
 
 if __name__ == "__main__":
     app.run(debug=True)
