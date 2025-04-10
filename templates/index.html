@@ -35,6 +35,13 @@
 
         <!-- Sushi Clicker Section -->
         <div class="sushi-clicker">
+            {% if name %}
+            <p>Velkommen, {{ name }}!<a href="/logout" class="button">Logout</a>
+            </p>
+            {% else %}
+            <p>Velkommen til siden! Vennligst <a href="/login">Logg inn</a> eller <a href="/register">Registrer deg
+                </a>for å få tilgang til flere spill!</p>
+            {% endif %}
             <img id="woodenCB" src="/static/images/woodenCB.png" alt="wooden cutting board png">
             <img id="sushiSvg" src="/static/images/sushiClicker.svg" alt="svg sushi">
         </div>

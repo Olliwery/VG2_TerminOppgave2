@@ -5,18 +5,25 @@
 {% endblock %}
 
 {% block body %}
-<form method="POST">
-    <div class="registrerInputs">
+<div class="registrerInputs">
+    <form action="login_post", method="POST">
         <div>
-            <h4>Email:</h4>
-            <input type="text" name="email" placeholder="Skriv inn emailen ditt" style="font-style:italic">
+            <label for="name">Navn:</label>
+            <input type="text" name="name" placeholder="Skriv inn navnet ditt" style="font-style: italic;">
         </div><br>
         <div>
-            <h4>Passord:</h4>
-            <input type="text" name="passord" placeholder="Skriv inn passordet ditt" style="font-style:italic">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Skriv inn emailen ditt" style="font-style:italic">
+        </div><br>
+        <div>
+            <label for="passord">Passord:</label>
+            <input type="password" name="passord" placeholder="Skriv inn passordet ditt" style="font-style:italic">
         </div>
         <button type="submit">Logg inn</button>
-    </div>
-</form>
-
+    </form>
+</div>
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+<p>Har ikke en bruker enda? <a href="/register">Trykk her!</a></p>
 {% endblock %}
