@@ -76,15 +76,20 @@ def login_post():
     conn.close()
     
     if user:
-        session['name'] = user
+        session['user_id'] = user[0]  # Antar at `id` er den første kolonnen i `Brukere`-tabellen
+        session['name'] = user[1]  # Brukernavn
         return redirect("/")
     else:
-        return render_template('/login', error="Feil email eller passord.")
+        return render_template("login.html", error="Feil email eller passord.")
     
 @app.route('/logout')
 def logout():   
     session.clear()  # Fjerner all sesjonsdata
     return redirect("/")
+
+
+# GAME LOGIKK ------------------------------------------------------------------
+
 
 
 if __name__ == "__main__":
