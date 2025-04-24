@@ -1,8 +1,8 @@
-# 🍣 Sushi Clicker
+# Sushi Clicker
 
 Sushi Clicker er et webbasert klikkespill hvor brukere kan samle poeng ved å klikke på sushi, oppgradere klikket sitt og ansette kokker som genererer poeng automatisk. Spillet inkluderer brukerregistrering, innlogging og lagring av spilldata i en MySQL-database.
 
-## 📑 Innhold
+## Innhold
 
 - [Om prosjektet](#om-prosjektet)
 - [Funksjonalitet](#funksjonalitet)
@@ -10,16 +10,17 @@ Sushi Clicker er et webbasert klikkespill hvor brukere kan samle poeng ved å kl
 - [Bruk](#bruk)
 - [Struktur](#struktur)
 
-## 🎮 Om prosjektet
+## Om prosjektet
 
 Sushi Clicker lar brukeren:
 - Klikke på sushi for å samle poeng.
 - Oppgradere klikkmultiplikatoren for å få flere poeng per klikk.
 - Ansette kokker som automatisk genererer poeng.
 - Oppgradere kokkenes effektivitet.
+
 Alt lagres i en database, slik at poeng og fremgang bevares mellom økter.
 
-## ⚙️ Funksjonalitet
+## Funksjonalitet
 
 **Backend (Flask)**  
 - Brukerregistrering med navn, e-post og passord  
@@ -34,7 +35,7 @@ Alt lagres i en database, slik at poeng og fremgang bevares mellom økter.
 - `Brukere`: lagrer brukerinformasjon  
 - `BrukerScore`: lagrer poeng, oppgraderinger og kokker  
 
-## 🛠️ Installasjon
+## Installasjon
 
 ```bash
 # 1. Klon prosjektet
@@ -76,7 +77,7 @@ python main.py
 # Gå til: http://127.0.0.1:5000
 ```
 
-## 🧑‍💻 Bruk
+## Bruk
 
 - Gå til `/registrer` for å opprette en bruker  
 - Gå til `/login` for å logge inn  
@@ -84,7 +85,7 @@ python main.py
 - Kjøp oppgraderinger og ansett kokker  
 - Trykk på "Lagre Scoren" for å lagre fremgangen  
 
-## 📁 Struktur
+## Struktur
 
 ```
 SushiClicker/
@@ -101,5 +102,31 @@ SushiClicker/
 │   └── brukerSide.html
 └── README.md              # Denne fila
 ```
+
+## Hvordan bidra
+
+1. Fork prosjektet.  
+2. Opprett en ny branch:
+
+```bash
+git checkout -b feature-navn
+```
+
+3. Gjør endringer og committ:
+
+```bash
+git add .
+git commit -m "Legg til ny funksjon"
+```
+
+4. Push branchen:
+
+```bash
+git push origin feature-navn
+```
+
+5. Lag en pull request.
+
+## Lisens
 
 Dette prosjektet er fritt tilgjengelig for læring og utvikling.
