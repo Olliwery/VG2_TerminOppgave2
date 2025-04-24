@@ -37,45 +37,56 @@ Alt lagres i en database, slik at poeng og fremgang bevares mellom økter.
 
 ## Installasjon
 
+1. Klon prosjektet:
 ```bash
-# 1. Klon prosjektet
 git clone https://github.com/ditt-brukernavn/sushi-clicker.git
 cd sushi-clicker
-
-# 2. Lag virtuelt miljø og installer avhengigheter
-python -m venv venv
-
-# Aktiver venv:
-# På Mac/Linux:
-source venv/bin/activate
-# På Windows:
-venv\Scripts\activate
-
-# Installer nødvendige pakker
-pip install flask mysql-connector-python
-
-# 3. Sett opp databasen
-# Kjør SQL-fila for å lage tabellene
-mysql -u brukernavn -p < db.sql
-
-# NB: Erstatt "brukernavn" med din MySQL-bruker
-
-# 4. Oppdater main.py med dine databaseinnstillinger
-# Finn funksjonen get_db_connection() og sett inn riktig info:
-# Eksempel:
-# connection = mysql.connector.connect(
-#     host='localhost',
-#     user='ditt-brukernavn',
-#     password='ditt-passord',
-#     database='sushi_clicker'
-# )
-
-# 5. Start serveren
-python main.py
-
-# 6. Åpne spillet i nettleseren:
-# Gå til: http://127.0.0.1:5000
 ```
+
+2. Opprett virtuelt miljø og installer avhengigheter:
+```bash
+python -m venv venv
+```
+
+Aktiver miljøet:
+```bash
+# På Mac/Linux
+source venv/bin/activate
+```
+```bash
+# På Windows
+venv\Scripts\activate
+```
+
+Installer nødvendige pakker:
+```bash
+pip install flask mysql-connector-python
+```
+
+3. Sett opp databasen:
+```bash
+mysql -u brukernavn -p < db.sql
+```
+> Erstatt `brukernavn` med din egen MySQL-bruker.
+
+4. Oppdater databaseinnstillinger i `main.py`:
+```python
+# Eksempel på get_db_connection():
+connection = mysql.connector.connect(
+    host='localhost',
+    user='ditt-brukernavn',
+    password='ditt-passord',
+    database='sushi_clicker'
+)
+```
+
+5. Start serveren:
+```bash
+python main.py
+```
+
+6. Åpne spillet i nettleseren:
+Gå til [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ## Bruk
 
@@ -102,30 +113,6 @@ SushiClicker/
 │   └── brukerSide.html
 └── README.md              # Denne fila
 ```
-
-## Hvordan bidra
-
-1. Fork prosjektet.  
-2. Opprett en ny branch:
-
-```bash
-git checkout -b feature-navn
-```
-
-3. Gjør endringer og committ:
-
-```bash
-git add .
-git commit -m "Legg til ny funksjon"
-```
-
-4. Push branchen:
-
-```bash
-git push origin feature-navn
-```
-
-5. Lag en pull request.
 
 ## Lisens
 
