@@ -114,6 +114,7 @@ SushiClicker/
 └── README.md              # Denne fila
 ```
 
+
 ## Lisens
 
 Dette prosjektet er fritt tilgjengelig for læring og utvikling.
