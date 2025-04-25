@@ -18,7 +18,7 @@ Sushi Clicker lar brukeren:
 - Ansette kokker som automatisk genererer poeng.
 - Oppgradere kokkenes effektivitet.
 
-Alt lagres i en database, slik at poeng og fremgang bevares mellom økter.
+(Fremtidig: Alt lagres i en database, slik at poeng og fremgang bevares mellom økter.)
 
 ## Funksjonalitet
 
