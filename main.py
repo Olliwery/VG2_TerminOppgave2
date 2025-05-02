@@ -87,9 +87,9 @@ def logout():
     session.clear()  # Fjerner all sesjonsdata
     return redirect("/")
 
-
-# GAME LOGIKK ------------------------------------------------------------------
-
+@app.route('/OmSpillet')
+def OmSpillet():
+    return render_template("OmSpillet.html")
 
 
 if __name__ == "__main__":
